@@ -14,7 +14,9 @@ datasource db2_db {
 
 model db2_User {
   id    Int     @id @default(autoincrement())
+  // Error parsing attribute "@unique": The given constraint name `User_email_key` has to be unique in the following namespace: global for indexes and unique constraints. Please provide a different name using the `map` argument.
   email String  @unique
   name  String?
+  // The model with database name "User" could not be defined because another model or view with this name exists: "db1_User"
   @@map("User")
 }
